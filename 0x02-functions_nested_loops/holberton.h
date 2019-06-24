@@ -11,3 +11,30 @@ int _putchar(char c)
 {
 	return (write(1, &c, 1));
 }
+/**
+ * _print_alphabet - print letters of alphabet in lower case
+ *
+ * Return: Noting
+ */
+void print_alphabet(void)
+{
+	int i;
+	for (i = 97; i <= 122; i++)
+	{
+		_putchar(i);
+	}
+}
+/**
+ * print_alphabet_x10 - print 10 lines alphabet
+ *
+ * Return: Nothing
+ */
+void print_alphabet_x10(void)
+{
+	int i;
+	for (i = 1; i <= 10; i++)
+	{
+		print_alphabet();
+		_putchar('\n');
+	}
+}
