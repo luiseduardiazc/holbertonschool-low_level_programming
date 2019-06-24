@@ -53,3 +53,18 @@ int _islower(int c)
 	}
 	return (0);	
 }
+/**
+ * _isalpha - it evaluate a character
+ *
+ * @c character to be evaluate
+ *
+ * Return: 1 if @c is alpha otherwise return 0
+ */
+int _isalpha(int c)
+{
+	if(isalpha(c))
+	{
+		return (1);
+	}
+	return (0);
+}
