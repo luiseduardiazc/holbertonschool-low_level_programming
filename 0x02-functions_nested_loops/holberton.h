@@ -38,3 +38,18 @@ void print_alphabet_x10(void)
 		_putchar('\n');
 	}
 }
+/**
+ *_islower - evaluate a character
+ *
+ * @c the character to evaluate
+ * 
+ * Return: 1 on the lowercase 0 to other 
+*/
+int _islower(int c)
+{
+	if(islower(c))
+	{
+		return (1);
+	}
+	return (0);	
+}
