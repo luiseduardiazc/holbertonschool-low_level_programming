@@ -1,12 +1,16 @@
-/**
- * main - Entry point
- *
- * Return: Always 0 (Success)
- */
 #include "holberton.h"
-int main(void)
+/**
+ *print_alphabet - prints the letters from a to z in lowercase
+ *
+ *Return: 0 upon successful completion
+ */
+void print_alphabet(void)
 {
-	print_alphabet();
-	_putchar('\n');
-	return (0);
+	int i;
+
+	for (i = 97; i <= 122; i++)
+	{
+		_putchar(i);
+	}
 }
+
