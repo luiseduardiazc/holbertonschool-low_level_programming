@@ -1,21 +1,17 @@
-/**
- * main - Entry point
- *
- * Return: Always 0 (Success)
- */
 #include "holberton.h"
-int main(void)
+/**
+ *_isalpha - Decides if a character is alpha or not
+ *@c: arbitrary character
+ *
+ *Description: This function return 1 if character is alpha
+ *Return: 1 if alpha, 0 if not
+ */
+int _isalpha(int c)
 {
-	int r;
-
-	r = _isalpha('H');
-	_putchar(r + '0');
-	r = _isalpha('o');
-	_putchar(r + '0');
-	r = _isalpha(108);
-	_putchar(r + '0');
-	r = _isalpha(';');
-	_putchar(r + '0');
-	_putchar('\n');
+	if (isalpha(c))
+	{
+		return (1);
+	}
 	return (0);
 }
+
