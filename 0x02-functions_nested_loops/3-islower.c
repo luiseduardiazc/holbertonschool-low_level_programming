@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <ctype.h>
 /**
  *_islower - evaluate lower letter
  *@c: it is  int parameter
@@ -7,7 +8,7 @@
  */
 int _islower(int c)
 {
-	if (islower(c))
+	if (c >= 'a' && c <= 'z')
 	{
 		return (1);
 	}
