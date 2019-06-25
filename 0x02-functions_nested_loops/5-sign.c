@@ -1,32 +1,26 @@
-/**
- * main - Entry point
- *
- * Return: Always 0 (Success)
- */
 #include "holberton.h"
-int main(void)
+/**
+ *print_sign - Decides if a number is grather, less or equal 0
+ *@n: arbitrary character
+ *
+ *Description: This print a sing and return number
+ *Return: 1 if n >0, 0 if n ==0, -1 if n < 0
+ */
+int print_sign(int n)
 {
-	int r;
-
-	r = print_sign(98);
-	_putchar(',');
-	_putchar(' ');
-	_putchar(r + '0');
-	_putchar('\n');
-	r = print_sign(0);
-	_putchar(',');
-	_putchar(' ');
-	_putchar(r + '0');
-	_putchar('\n');
-	r = print_sign(0xff);
-	_putchar(',');
-	_putchar(' ');
-	_putchar(r + '0');
-	_putchar('\n');
-	r = print_sign(-1);
-	_putchar(',');
-	_putchar(' ');
-	_putchar(r + '0');
-	_putchar('\n');
+	if (n > 0)
+	{
+		_putchar('+');
+		return (1);
+	} else if (n == 0)
+	{
+		_putchar('0');
+		return (0);
+	} else if (n < 0)
+	{
+		_putchar('-');
+		return (-1);
+	}
 	return (0);
 }
+
