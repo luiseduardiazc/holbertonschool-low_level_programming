@@ -32,7 +32,7 @@ while (pEnd > pInit)
 	*pInit = *pEnd;
 	*pEnd = temp;
 
-	pInit ++;
+	pInit++;
 	pEnd--;
 }
 }
