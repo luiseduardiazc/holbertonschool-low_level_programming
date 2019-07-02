@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stdio.h>
 /**
  *_strlen - reset number
  *Description: This function return a length for some string
@@ -20,15 +21,15 @@ int _strlen(char *s)
  *print_rev - check the code for Holberton School students.
  *@s: pointer parameter
  *Description: This function prints a string reverse
- * Return: Always Nothing.
+ *Return: Always Nothing.
  */
 void print_rev(char *s)
 {
 	int i;
 
-	for (i = _strlen(s); i >= 0; i--)
+	for (i = _strlen(s) - 1; i >= 0; i--)
 	{
-		_putchar(s[i]);
+		putchar(s[i]);
 	}
-	_putchar('\n');
+	putchar('\n');
 }
