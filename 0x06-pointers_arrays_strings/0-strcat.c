@@ -26,8 +26,8 @@ int _strlen(char *s)
  */
 char *_strcat(char *dest, char *src)
 {
-	int i, x;
-	x = 0;
+	int i, x = 0;
+
 	for (i = 6; i < 13; i++)
 	{
 		dest[i] = src[x];
