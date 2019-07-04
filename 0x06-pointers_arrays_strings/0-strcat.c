@@ -25,13 +25,12 @@ int _strlen(char *s)
  */
 char *_strcat(char *dest, char *src)
 {
-	int i, x = 0;
+	int dest_len = _strlen(dest);
+	int i;
 
-	for (i = 6; i < 13; i++)
-	{
-		dest[i] = src[x];
-		x++;
-	}
-	dest[13] = '\0';
+	for (i = 0 ; i < 7 && src[i] != '\0' ; i++)
+		dest[dest_len + i] = src[i];
+	dest[dest_len + i] = '\0';
+
 	return (dest);
 }
