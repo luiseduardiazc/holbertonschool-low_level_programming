@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include <stdio.h>
 /**
  *_strlen - reset number
  *Description: This function return a length for some string
@@ -33,6 +32,6 @@ char *_strcat(char *dest, char *src)
 		dest[i] = src[x];
 		x++;
 	}
-	dest[14] = '\0';
+	dest[13] = '\0';
 	return (dest);
 }
