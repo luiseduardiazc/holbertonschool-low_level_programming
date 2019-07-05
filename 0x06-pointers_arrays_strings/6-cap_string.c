@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include <stdio.h>
 /**
  *_strlen - reset number
  *Description: This function return a length for some string
