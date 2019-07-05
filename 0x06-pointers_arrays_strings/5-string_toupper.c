@@ -26,7 +26,7 @@ char *string_toupper(char *s1)
 {
 	int i, j;
 
-	for (i = 0; i < _strlen(s1) - 1; i++)
+	for (i = 0; i < _strlen(s1); i++)
 	{
 		for (j = 'a'; j <= 'z'; j++)
 		{
