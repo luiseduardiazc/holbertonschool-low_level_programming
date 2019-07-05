@@ -11,7 +11,7 @@ void reverse_array(int *a, int n)
 	int *pStart = a;
 	int *pEnd = a + (n - 1);
 
-	while (pEnd > pStart)
+	while (pEnd >= pStart)
 	{
 		char temp = *pStart;
 		*pStart = *pEnd;
