@@ -4,6 +4,7 @@
  *@a: pointer parameter"
  *@n: pointer parameter"
  *Description: This function compare two strings
+ *Return: Nothing
  */
 void reverse_array(int *a, int n)
 {
