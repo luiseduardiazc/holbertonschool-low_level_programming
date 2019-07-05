@@ -47,9 +47,12 @@ char *cap_string(char *s1)
 		{
 			for (j = 'a'; j <= 'z'; j++)
 			{
-				if (s1[i + 1] == j)
+				if (s1[i + 1] == j && i != 0)
 				{
 					s1[i + 1] = j - 32;
+				} else if (s1[i] == j && i == 0)
+				{
+					s1[i] = j - 32;
 				}
 			}
 		}
