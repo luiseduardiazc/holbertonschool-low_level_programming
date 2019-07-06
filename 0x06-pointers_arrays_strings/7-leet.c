@@ -1,5 +1,5 @@
 #include "holberton.h"
-#include <string.h> 
+#include <string.h>
 /**
  *leet - change letters by numbers
  *@s1: pointer parameter"
