@@ -21,10 +21,11 @@ char *leet(char *s1)
 				{'l', '1'},
 				{'L', '1'}
 				};
+	int len_codes = sizeof(encodes);
 
 	for (i = 0; i < len; i++)
 	{
-		for (j = 0; j < 10; j++)
+		for (j = 0; j < len_codes; j++)
 		{
 			if (s1[i] == encodes[j][0])
 			{
