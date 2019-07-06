@@ -1,7 +1,7 @@
 #include "holberton.h"
 /**
- *root13 - change letters by numbers
- *@s1: pointer parameter"
+ *rot13 - Rotate letters
+ *@s1: pointer parameter
  *Description: Rotate letters
  *Return: return pointer
  */
