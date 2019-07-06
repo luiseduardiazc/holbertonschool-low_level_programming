@@ -10,17 +10,17 @@ char *rot13(char *s1)
 	int j;
 	char *pString = s1;
 
-	char encodes[2][52] = {
+	char encodes[2][53] = {
 	{"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"},
 	{"NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm"}
 				};
 
 	while (*pString != '\0')
 	{
+		char letter = *pString;
+
 		for (j = 0; j < 52; j++)
 		{
-			char letter = *pString;
-
 			if (letter == encodes[0][j])
 			{
 				*pString = encodes[1][j];
