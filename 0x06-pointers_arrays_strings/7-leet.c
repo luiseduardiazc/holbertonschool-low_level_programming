@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <string.h> 
 /**
  *leet - change letters by numbers
  *@s1: pointer parameter"
@@ -8,7 +9,7 @@
 char *leet(char *s1)
 {
 	int i, j;
-	int len = sizeof(s1) - 1;
+	int len = strlen(s1) - 1;
 	char encodes[10][2] = {
 				{'a', '4'},
 				{'A', '4'},
@@ -21,11 +22,10 @@ char *leet(char *s1)
 				{'l', '1'},
 				{'L', '1'}
 				};
-	int len_codes = sizeof(encodes);
 
 	for (i = 0; i < len; i++)
 	{
-		for (j = 0; j < len_codes; j++)
+		for (j = 0; j < 10; j++)
 		{
 			if (s1[i] == encodes[j][0])
 			{
