@@ -1,22 +1,5 @@
 #include "holberton.h"
 /**
- *_strlen - reset number
- *Description: This function return a length for some string
- *@s: pointer char
- *Return: int length
- */
-
-int _strlen(char *s)
-{
-	int len = 0;
-
-	while (*s++)
-	{
-		len++;
-	}
-	return (len);
-}
-/**
  *leet - change letters by numbers
  *@s1: pointer parameter"
  *Description: change letters by numbers
@@ -25,6 +8,7 @@ int _strlen(char *s)
 char *leet(char *s1)
 {
 	int i, j;
+	int len = sizeof(s1) - 1;
 	char encodes[10][2] = {
 				{'a', '4'},
 				{'A', '4'},
@@ -38,7 +22,7 @@ char *leet(char *s1)
 				{'L', '1'}
 				};
 
-	for (i = 0; i < _strlen(s1) - 1; i++)
+	for (i = 0; i < len; i++)
 	{
 		for (j = 0; j < 10; j++)
 		{
