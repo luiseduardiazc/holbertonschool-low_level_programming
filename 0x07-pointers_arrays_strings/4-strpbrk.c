@@ -23,5 +23,9 @@ char *_strpbrk(char *s, char *accept)
 		accept = aux;
 		s++;
 	}
-	return NULL;
+	if (*s == *accept)
+	{
+		return (s);
+	}
+	return (0);
 }
