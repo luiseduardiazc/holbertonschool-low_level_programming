@@ -13,6 +13,11 @@ int main(int argc, char *argv[])
 {
 	int i, sum = 0;
 
+	if (argc < 3)
+	{
+		printf("%d\n", 0);
+		return (0);
+	}
 	for (i = 1; i < argc; i++)
 	{
 		if (!isdigit(*argv[i])) /* not numeric */
