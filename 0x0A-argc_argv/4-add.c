@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
 {
 	int i, val, sum = 0;
 
-	if (argc < 3)
+	if (argc == 1)
 	{
 		printf("%d\n", 0);
 	} else
