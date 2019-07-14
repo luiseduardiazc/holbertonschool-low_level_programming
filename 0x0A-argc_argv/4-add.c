@@ -14,7 +14,7 @@ int main(int argc, char **argv)
 	if (argc == 1)
 	{
 		printf("%d\n", 0);
-		return (1);
+		exit(EXIT_FAILURE);
 	}
 
 	while (argc-- && argc > 0)
@@ -32,5 +32,5 @@ int main(int argc, char **argv)
 		sum += atoi(*argv);
 	}
 	printf("%d\n", sum);
-	return (0);
+	exit(EXIT_SUCCESS);
 }
