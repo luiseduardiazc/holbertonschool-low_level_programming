@@ -28,5 +28,5 @@ int main(int argc, char *argv[])
 	sum += val;
 	}
 	printf("%d\n", sum);
-	return (0);
+	return (sum);
 }
