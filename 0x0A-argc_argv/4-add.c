@@ -22,7 +22,7 @@ int main(int argc, char **argv)
 		if (!atoi(*++argv))
 		{
 			printf("Error\n");
-			exit(EXIT_SUCCESS);
+			return (1);
 		} else
 		{
 			sum += atoi(*argv);
