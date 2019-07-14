@@ -23,10 +23,8 @@ int main(int argc, char **argv)
 		{
 			printf("Error\n");
 			return (1);
-		} else
-		{
-			sum += atoi(*argv);
 		}
+		sum += atoi(*argv);
 	}
 	printf("%d\n", sum);
 	exit(EXIT_SUCCESS);
