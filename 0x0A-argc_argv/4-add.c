@@ -42,7 +42,10 @@ int main(int argc, char *argv[])
 				return (1);
 			}
 			val = atoi(argv[i]);
-			sum += val;
+			if (val > 0)
+			{
+				sum += val;
+			}
 		}
 		printf("%d\n", sum);
 	}
