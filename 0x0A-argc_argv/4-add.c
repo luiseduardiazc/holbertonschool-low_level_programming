@@ -3,26 +3,56 @@
 #include <string.h>
 #include <ctype.h>
 /**
- * main - program that adds positive numbers
- * @argc: argument count
- * @argv: numbers to add
- * Return: 0
+ * isnumber - test input is a number or not
+ *
+ * @number: number to check
+ * Return: 1 if number, 0 if not
+ */
+int isnumber(char *number)
+{
+	int i;
+
+	i = 0;
+	while (number[i] != '\0')
+	{
+		if (isdigit(number[i]))
+			i++;
+		else
+			return (0);
+	}
+	return (1);
+}
+
+/**
+ * main - print add
+ * @argv: arguments
+ * @argc: number of arguments
+ * Return: always zero
  */
 int main(int argc, char *argv[])
 {
-	int i, val, sum;
+	int sum, i;
 
 	sum = 0;
-	for (i = 1; i < argc; i++)
+	if (argc < 3)
 	{
-		if (!isdigit(*argv[i]))
+		printf("0\n");
+		return (1);
+	}
+	i = 1;
+	while (i < argc)
+	{
+		if (isnumber(argv[i]))
+		{
+			sum += atoi(argv[i]);
+		}
+		else
 		{
 			printf("Error\n");
 			return (1);
 		}
-	val = atoi(argv[i]);
-	sum += val;
+		i++;
 	}
 	printf("%d\n", sum);
-	return (sum);
+	return (0);
 }
