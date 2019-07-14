@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <ctype.h>
+#include <stdlib.h>
 /**
  * main - print add
  * @argv: arguments
@@ -10,7 +10,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int sum = 0, val = 0, i = 1;
+	int sum = 0, i = 1;
 
 	if (argc < 3)
 	{
@@ -19,16 +19,12 @@ int main(int argc, char *argv[])
 	}
 	while (i < argc)
 	{
-		if (isdigit(*argv[i]))
+		if (!isdigit(*argv[i]))
 		{
-			val = atoi(argv[i]);
-			sum += val;
-		}
-		else
-		{
-			printf("Error\n");
+			printf("%s\n", "Error");
 			return (1);
 		}
+		sum += atoi(argv[i]);
 		i++;
 	}
 	printf("%d\n", sum);
