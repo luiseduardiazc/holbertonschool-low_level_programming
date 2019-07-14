@@ -18,7 +18,7 @@ int main(int argc, char **argv)
 	{
 		if (!atoi(*++argv))
 		{
-			printf("%d\n", 0);
+			printf("Error\n");
 			exit(EXIT_SUCCESS);
 		} else
 		{
