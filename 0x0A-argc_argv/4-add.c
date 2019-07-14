@@ -24,10 +24,12 @@ int main(int argc, char **argv)
 			printf("Error\n");
 			return (1);
 		}
-		if (atoi(*argv) > 0)
+		if (atoi(*argv) < 0)
 		{
-			sum += atoi(*argv);
+			printf("Error\n");
+			return (1);
 		}
+		sum += atoi(*argv);
 	}
 	printf("%d\n", sum);
 	exit(EXIT_SUCCESS);
