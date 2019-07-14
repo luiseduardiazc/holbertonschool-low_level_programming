@@ -14,7 +14,7 @@ int isNumeric(const char *s)
 
 	if (s == NULL || *s == '\0' || isspace(*s))
 		return (0);
-	strtod (s, &p);
+	strtod(s, &p);
 	return (*p == '\0');
 }
 /**
@@ -36,6 +36,7 @@ int main(int argc, char *argv[])
 		for (i = 1; i < argc; i++)
 		{
 			char *value = argv[i];
+
 			if (!isNumeric(value))
 			{
 				printf("%s\n", "Error");
