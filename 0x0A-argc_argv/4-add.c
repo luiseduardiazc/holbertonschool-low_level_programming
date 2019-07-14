@@ -5,24 +5,18 @@
 /**
  * isnumber - test input is a number or not
  *
- * @number: number to check
+ * @s: pointer  number to check
  * Return: 1 if number, 0 if not
  */
-int isnumber(char *number)
+int isnumber(char *s)
 {
-	int i;
+	char *p = NULL;
 
-	i = 0;
-	while (number[i] != '\0')
-	{
-		if (isdigit(number[i]))
-			i++;
-		else
-			return (0);
-	}
-	return (1);
+	if (s == NULL || *s == '\0' || isspace(*s))
+		return (0);
+	strtod(s, &p);
+	return (*p == '\0');
 }
-
 /**
  * main - print add
  * @argv: arguments
