@@ -25,9 +25,10 @@ int isnumber(char *s)
  */
 int main(int argc, char *argv[])
 {
-	int sum, i;
+	int sum, val, i;
 
 	sum = 0;
+	val = 0;
 	if (argc < 3)
 	{
 		printf("0\n");
@@ -38,7 +39,9 @@ int main(int argc, char *argv[])
 	{
 		if (isnumber(argv[i]))
 		{
-			sum += atoi(argv[i]);
+			val = atoi(argv[i]);
+			if (val > 0)
+				sum += val;
 		}
 		else
 		{
