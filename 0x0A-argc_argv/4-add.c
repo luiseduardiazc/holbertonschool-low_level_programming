@@ -12,6 +12,11 @@ int main(int argc, char *argv[])
 {
 	int i, val, sum = 0;
 
+	if (argc == 2 && !isdigit(*argv[1]))
+	{
+		printf("%s\n", "Error");
+		return (1);
+	}
 	if (argc < 3)
 	{
 		printf("%d\n", 0);
