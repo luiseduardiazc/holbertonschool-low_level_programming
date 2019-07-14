@@ -11,8 +11,11 @@ int main(int argc, char **argv)
 {
 	int sum = 0;
 
-	if (argc < 1)
+	if (argc == 1)
+	{
 		printf("%d\n", 0);
+		exit(EXIT_SUCCESS);
+	}
 
 	while (argc-- && argc > 0)
 	{
