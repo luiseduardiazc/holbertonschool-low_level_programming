@@ -13,8 +13,11 @@ int main(int argc, char **argv)
 	char *num_a;
 	char *num_b;
 
-	if (argc < 0)
+	if (argc != 3)
+	{
+		printf("Error\n");
 		exit(EXIT_FAILURE);
+	}
 
 	num_a = *(argv + 1);
 	num_b = *(argv + 2);
