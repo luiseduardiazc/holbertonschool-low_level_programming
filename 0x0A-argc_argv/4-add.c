@@ -1,25 +1,22 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include <ctype.h>
 /**
  * main - print add
  * @argv: arguments
  * @argc: number of arguments
+ * Description: main function
  * Return: always zero
  */
 int main(int argc, char *argv[])
 {
-	int sum, val, i;
+	int sum = 0, val = 0, i = 1;
 
-	sum = 0;
-	val = 0;
 	if (argc < 3)
 	{
-		printf("0\n");
+		printf("%d\n", 0);
 		return (1);
 	}
-	i = 1;
 	while (i < argc)
 	{
 		if (isdigit(*argv[i]))
