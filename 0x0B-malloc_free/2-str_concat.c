@@ -53,6 +53,6 @@ char *str_concat(char *s1, char *s2)
 		ar[i] = s2[j];
 		i++;
 	}
-	ar[i + 1] = '\0';
+	/** ar[i + 1] = '\0'; */
 	return (ar);
 }
