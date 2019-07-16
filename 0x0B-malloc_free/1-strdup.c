@@ -43,5 +43,6 @@ char *_strdup(char *str)
 		str++;
 		i++;
 	}
+	ar[i + 1] = '\0';
 	return (ar);
 }
