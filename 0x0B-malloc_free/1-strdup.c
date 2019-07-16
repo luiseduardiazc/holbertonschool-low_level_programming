@@ -1,6 +1,22 @@
-#include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
+#include <stdio.h>
+/**
+ *_strlen - reset number
+ *Description: This function return a length for some string
+ * @s: pointer char
+ *Return: int length
+ */
+
+int _strlen(char *s)
+{
+	int len = 0;
+
+	while (*s++)
+	{
+		len++;
+	}
+	return (len);
+}
 /**
  *_strdup - copy pointer
  *@str: pointer char parmeter
@@ -16,7 +32,7 @@ char *_strdup(char *str)
 	{
 		return (NULL);
 	}
-	ar = malloc(strlen(str) * sizeof(char));
+	ar = malloc(_strlen(str) * sizeof(char));
 	if (ar == NULL)
 	{
 		return (NULL);
