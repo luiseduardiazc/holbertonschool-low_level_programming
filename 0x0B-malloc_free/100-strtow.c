@@ -55,7 +55,6 @@ char **strtow(char *str)
 		{
 			printf("tab");
 		}
-	 printf("%c", str[i]);
 	}
 	return (NULL);
 }
