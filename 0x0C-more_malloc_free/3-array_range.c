@@ -47,7 +47,7 @@ int *array_range(int min, int max)
 		return (NULL);
 	}
 
-	ptr = _calloc(max, sizeof(int));
+	ptr = _calloc(max + 1, sizeof(int));
 
 	if (ptr == NULL)
 	{
