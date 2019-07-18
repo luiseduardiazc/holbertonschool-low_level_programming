@@ -40,14 +40,14 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 int *array_range(int min, int max)
 {
 	int *ptr;
-	int i;
+	int i = 0, cant = 0;
 
 	if (min > max)
 	{
 		return (NULL);
 	}
-
-	ptr = _calloc(max + 1, sizeof(int));
+	cant = max - min;
+	ptr = _calloc(cant + 1, sizeof(int));
 
 	if (ptr == NULL)
 	{
