@@ -6,7 +6,7 @@
  *Return: int length
  */
 
-unsigned int _strlen(char *s)
+int _strlen(char *s)
 {
 	int len = 0;
 
