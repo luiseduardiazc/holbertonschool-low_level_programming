@@ -49,40 +49,38 @@ char *_strcpy(char *dest, char *src)
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *newdog;
-	char *c_name, *c_owner;
+	dog_t *copy_dog;
+	int name_len = _strlen(name);
+	int owner_len = _strlen(owner);
 
-	newdog = malloc(sizeof(struct dog));
-	c_name = malloc(_strlen(name) * sizeof(char));
-	c_owner = malloc(_strlen(owner) * sizeof(char));
-	if (newdog == NULL || c_name == NULL || c_owner == NULL)
+	if (name == NULL || owner == NULL)
+		return (NULL);
+
+	copy_dog = malloc(sizeof(dog_t));
+
+	if (copy_dog == NULL)
+		return (NULL);
+
+	copy_dog->name = malloc(name_len + 1);
+
+	if (copy_dog->name == NULL)
 	{
+		free(copy_dog);
 		return (NULL);
 	}
 
-	newdog->name = malloc(sizeof(char) * _strlen(name));
-	if (newdog->name == NULL)
+	copy_dog->owner = malloc(owner_len + 1);
+
+	if (copy_dog->owner == NULL)
 	{
-		free(newdog);
-		free(c_name);
-		free(c_owner);
+		free(copy_dog->name);
+		free(copy_dog);
 		return (NULL);
 	}
-	_strcpy(newdog->name, name);
-	_strcpy(c_name, name);
 
-	newdog->age = age;
-	newdog->owner = malloc(sizeof(char) * _strlen(owner));
-	if (newdog->owner == NULL)
-	{
-		free(newdog->name);
-		free(newdog);
-		free(c_name);
-		free(c_owner);
-		return (NULL);
-	}
-	_strcpy(newdog->owner, owner);
-	_strcpy(c_owner, owner);
+	_strcpy(copy_dog->name, name);
+	copy_dog->age = age;
+	_strcpy(copy_dog->owner, owner);
 
-	return (newdog);
+	return (copy_dog);
 }
