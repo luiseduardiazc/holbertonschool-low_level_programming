@@ -53,8 +53,8 @@ dog_t *new_dog(char *name, float age, char *owner)
 	char *c_name, *c_owner;
 
 	newdog = malloc(sizeof(struct dog));
-	c_name = malloc(sizeof(name));
-	c_owner = malloc(sizeof(owner));
+	c_name = malloc(_strlen(name) * sizeof(char));
+	c_owner = malloc(_strlen(owner) * sizeof(char));
 	if (newdog == NULL || c_name == NULL || c_owner == NULL)
 	{
 		return (NULL);
