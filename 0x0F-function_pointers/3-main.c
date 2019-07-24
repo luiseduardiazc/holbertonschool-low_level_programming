@@ -16,15 +16,11 @@ int main(int argc, char *argv[])
 	{
 		printf("Error\n");
 		exit(98);
-	}
-
-	if ((argv[1] == 0) && (strcmp(argv[2], "/") == 0))
+	} else if ((argv[1] == 0) && (strcmp(argv[2], "/") == 0))
 	{
 		printf("Error\n");
 		exit(100);
-	}
-
-	if (
+	} else if (
 
 			(strcmp(argv[2], "+") &&
 			 strcmp(argv[2], "-") &&
@@ -32,14 +28,13 @@ int main(int argc, char *argv[])
 			 strcmp(argv[2], "/") &&
 			 strcmp(argv[2], "%")
 			)
-	   )
+		  )
 	{
 		printf("Error\n");
-		exit(98);
+		exit(99);
 	}
 
 	functionPtr = get_op_func(argv[2]);
 	printf("%d\n", functionPtr(atoi(argv[1]), atoi(argv[3])));
-
 	return (0);
 }
