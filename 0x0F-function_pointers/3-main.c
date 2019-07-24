@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
 	{
 		printf("Error\n");
 		exit(98);
-	} else if ((argv[1] == 0) && (strcmp(argv[2], "/") == 0))
+	} else if ((*argv[3] == '0') && strcmp(argv[2], "/") == 0)
 	{
 		printf("Error\n");
 		exit(100);
