@@ -15,17 +15,20 @@ int int_index(int *array, int size, int (*cmp)(int))
 	{
 		return (-1);
 	}
-
-	for (i = 0; i < size && no_matches == 1; i++)
+	if (array && cmp)
 	{
-		if (cmp(array[i]))
+		for (i = 0; i < size && no_matches == 1; i++)
 		{
-			no_matches = 0;
+			if (cmp(array[i]))
+			{
+				no_matches = 0;
+			}
 		}
+		if (no_matches)
+		{
+			return (-1);
+		}
+	i = i - 1;
 	}
-	if (no_matches)
-	{
-		return (-1);
-	}
-	return (i - 1);
+	return (i);
 }
