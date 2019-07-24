@@ -9,7 +9,7 @@
  */
 int int_index(int *array, int size, int (*cmp)(int))
 {
-	int i, no_matches = 1;
+	int i;
 
 	if (size <= 0)
 	{
@@ -17,18 +17,13 @@ int int_index(int *array, int size, int (*cmp)(int))
 	}
 	if (array && cmp)
 	{
-		for (i = 0; i < size && no_matches == 1; i++)
+		for (i = 0; i < size; i++)
 		{
 			if (cmp(array[i]))
 			{
-				no_matches = 0;
+				return (i);
 			}
 		}
-		if (no_matches)
-		{
-			return (-1);
-		}
-	i = i - 1;
 	}
-	return (i);
+	return (-1);
 }
