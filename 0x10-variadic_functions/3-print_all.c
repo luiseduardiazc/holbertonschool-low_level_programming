@@ -12,6 +12,11 @@ void print_all(const char * const format, ...)
 	int flag = 0, value = 0;
 	char *s;
 
+	while (format == NULL)
+	{
+		printf("\n");
+		return;
+	}
 	va_start(arguments, format);
 	while (format[i] != '\0')
 	{
