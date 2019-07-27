@@ -1,4 +1,22 @@
-#include "variadic_functions.h"
+#include <stdlib.h>
+#include <stdarg.h>
+#include <stdio.h>
+/**
+ * _strlen - calculate len
+ * @s: char pointer
+ *
+ * Return: len
+ */
+int _strlen(char *s)
+{
+	int len = 0;
+
+	while (*s++)
+	{
+		len++;
+	}
+	return (len);
+}
 /**
  * print_all - print_strings
  * @format: format pointer
@@ -7,16 +25,12 @@
 void print_all(const char * const format, ...)
 {
 	va_list arguments;
-	unsigned int i = 0;
+	int i = 0, flag = 0;
 	double _double;
-	int flag = 0, value = 0;
 	char *s;
 
 	while (format == NULL)
-	{
-		printf("\n");
 		return;
-	}
 	va_start(arguments, format);
 	while (format[i] != '\0')
 	{
@@ -25,12 +39,10 @@ void print_all(const char * const format, ...)
 		{
 
 			case 'c':
-				value = va_arg(arguments, int);
-				printf("%c", value);
+				printf("%c", va_arg(arguments, int));
 				break;
 			case 'i':
-				value = va_arg(arguments, int);
-				printf("%d", value);
+				printf("%d", va_arg(arguments, int));
 				break;
 			case 'f':
 				_double = va_arg(arguments, double);
@@ -45,7 +57,7 @@ void print_all(const char * const format, ...)
 			default:
 				flag = 1;
 		}
-		if (flag == 0 && i != strlen(format) - 1)
+		if (flag == 0 && i != _strlen((char *)format) - 1)
 			printf(", ");
 		i++;
 	}
