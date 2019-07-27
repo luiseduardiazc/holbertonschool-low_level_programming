@@ -1,67 +1,51 @@
-#include <stdlib.h>
-#include <stdarg.h>
 #include <stdio.h>
-/**
- * _strlen - calculate len
- * @s: char pointer
- *
- * Return: len
- */
-int _strlen(char *s)
-{
-	int len = 0;
+#include <stdarg.h>
 
-	while (*s++)
-	{
-		len++;
-	}
-	return (len);
-}
 /**
- * print_all - print_strings
- * @format: format pointer
- * Return: Noting
+ * print_all - function that prints anything.
+ * @format: string used as format
+ * Return: void
  */
 void print_all(const char * const format, ...)
 {
-	va_list anything;
-	int i = 0;
-	char *string;
+	va_list args;
+	char *str;
+	int i = 0, j;
 
-	va_start(anything, format);
-	while (format == NULL)
+	while (format && format[i])
 	{
-		printf("\n");
-		return;
-	}
-	while (format[i] != '\0')
-	{
-		switch (format[i])
+		va_start(args, format);
+		while (format[i])
 		{
+			j = 1;
+			switch (format[i++])
+			{
 			case 'c':
-				printf("%c", (char) va_arg(anything, int));
+				printf("%c", va_arg(args, int));
 				break;
 			case 'i':
-				printf("%d", va_arg(anything, int));
+				printf("%d", va_arg(args, int));
 				break;
 			case 'f':
-				printf("%f", (float) va_arg(anything, double));
+				printf("%f", va_arg(args, double));
 				break;
 			case 's':
-				string = va_arg(anything, char *);
-				if (string != NULL)
+				str = va_arg(args, char*);
+				if (str)
 				{
-					printf("%s", string);
+					printf("%s", str);
 					break;
 				}
 				printf("(nil)");
 				break;
+			default:
+				j = 0;
+				break;
+			}
+			if (format[i] && j)
+				printf(", ");
 		}
-		if ((format[i] == 'c' || format[i] == 's' || format[i] == 'i'
-			|| format[i] == 'f') && (format[i + 1] != '\0'))
-			printf(", ");
-		i++;
+		va_end(args);
 	}
-	va_end(anything);
 	printf("\n");
 }
