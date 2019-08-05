@@ -1,0 +1,20 @@
+#include "lists.h"
+/**
+ * pop_listint - pop list int
+ * @head: pointer from head listint
+ * Description: This function pop head from  list
+ * Return: Return n
+ */
+int pop_listint(listint_t **head)
+{
+	int n = 0;
+	listint_t *current;
+
+	if (head)
+	{
+		current = *head;
+		n = current->n;
+		*head = current->next;
+	}
+	return (n);
+}
