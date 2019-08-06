@@ -8,7 +8,7 @@
 size_t print_listint(const listint_t *h)
 {
 	listint_t const *current = h;
-	size_t num_elements = 0;
+	int num_elements = 0;
 
 	if (!current)
 		return (0);
@@ -18,5 +18,5 @@ size_t print_listint(const listint_t *h)
 		current = current->next;
 		num_elements++;
 	}
-	return ((int)num_elements);
+	return (num_elements);
 }
