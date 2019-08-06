@@ -18,5 +18,5 @@ size_t print_listint(const listint_t *h)
 		current = current->next;
 		num_elements++;
 	}
-	return (num_elements);
+	return ((int)num_elements);
 }
