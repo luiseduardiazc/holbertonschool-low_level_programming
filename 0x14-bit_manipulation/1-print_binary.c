@@ -1,18 +1,16 @@
 #include "holberton.h"
 /**
- * print_binary - print_binary
+ *print_binary - print binary
  *Description: convert decimal to binary
  *@n: number to be convert
- *Return: Nothinh
+ *Return: Nothing
  */
 void print_binary(unsigned long int n)
 {
 	int i = 0;
 
 	if (n == 0)
-	{
 		_putchar('0');
-	}
 
 	while (n >> i)
 		i++;
