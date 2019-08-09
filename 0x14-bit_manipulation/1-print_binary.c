@@ -12,6 +12,9 @@ void print_binary(unsigned long int n)
 	while (n >> i)
 		i++;
 
+	if (n == 0)
+		_putchar('0');
+
 	for (i = i - 1; i >= 0; i--)
 	{
 		int var = n >> i;
