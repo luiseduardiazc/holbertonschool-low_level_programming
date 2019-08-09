@@ -17,7 +17,7 @@ void print_binary(unsigned long int n)
 
 	for (i = i - 1; i >= 0; i--)
 	{
-		int var = n >> i;
+		unsigned long int var = n >> i;
 
 		if (var & 1)
 			_putchar('1');
