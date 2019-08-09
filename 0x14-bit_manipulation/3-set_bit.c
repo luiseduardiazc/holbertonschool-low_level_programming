@@ -6,14 +6,14 @@
  *@index: int index
  *Return: 1 if it works and -1 if it fail
  */
-int set_bit(unsigned long int n, unsigned int index)
+int set_bit(unsigned long int *n, unsigned int index)
 {
-	unsigned int set_num = 0;
+	unsigned long int set_num = 0;
 
 	if (index > (sizeof(index) * 8))
 		return (-1);
 
 	set_num = (1 << index);
-	*n = *n | num;
+	*n = *n | set_num;
 	return (1);
 }
