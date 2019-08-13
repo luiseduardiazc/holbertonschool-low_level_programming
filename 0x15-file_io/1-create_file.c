@@ -28,8 +28,8 @@ size_t _strlen(char *s)
  */
 int create_file(const char *filename, char *text_content)
 {
-	int is_open
-		size_t s_success;
+	int is_open;
+	size_t is_success;
 
 	if (!filename)
 	{
@@ -47,8 +47,11 @@ int create_file(const char *filename, char *text_content)
 		return (1);
 	}
 	is_success = write(is_open, text_content, _strlen(text_content));
-	if (is_success == -1)
-		close(is_open), return (-1);
+	if ((int)is_success == -1)
+	{
+		close(is_open);
+		return (-1);
+	}
 
 	close(is_open);
 	return (1);
