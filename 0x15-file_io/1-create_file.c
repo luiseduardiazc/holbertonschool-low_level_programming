@@ -9,9 +9,9 @@
  *@s: pointer char
  *Return: int length
  */
-int _strlen(char *s)
+size_t _strlen(char *s)
 {
-	int len = 0;
+	size_t len = 0;
 
 	while (*s++)
 	{
@@ -28,7 +28,8 @@ int _strlen(char *s)
  */
 int create_file(const char *filename, char *text_content)
 {
-	int is_open, is_success;
+	int is_open
+		size_t s_success;
 
 	if (!filename)
 	{
@@ -41,12 +42,14 @@ int create_file(const char *filename, char *text_content)
 	}
 	if (!text_content)
 	{
-		write(STDIN_FILENO, "", 1);
+		write(is_open, "", 1);
+		close(is_open);
 		return (1);
 	}
-	is_success = write(STDIN_FILENO, text_content, _strlen(text_content) + 1);
+	is_success = write(is_open, text_content, _strlen(text_content));
 	if (is_success == -1)
-		return (-1);
+		close(is_open), return (-1);
 
+	close(is_open);
 	return (1);
 }
