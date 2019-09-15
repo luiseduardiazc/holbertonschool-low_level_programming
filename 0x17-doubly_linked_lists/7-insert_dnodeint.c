@@ -1,5 +1,27 @@
 #include "lists.h"
 /**
+ * dlistint_len - print_dlistint
+ * @h: pointer
+ * Return: count of elements
+ */
+size_t dlistint_len(const dlistint_t *h)
+{
+	size_t count = 0;
+	dlistint_t const *current = h;
+
+	if (!current)
+	{
+		return (count);
+	}
+	while (current != NULL)
+	{
+		current = current->next;
+		count++;
+	}
+	return (count);
+}
+
+/**
  * insert_dnodeint_at_index - insert_dnodeint_at_index
  * @h: list type dlistint_t
  * @idx: index
@@ -16,10 +38,15 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	add_dnodeint(&new_node, n);
 	if (new_node == NULL)
 		return (NULL);
+	if (idx < 0)
+	{
+		free(new_node);
+		return (NULL);
+	}
 	if (idx == 0)
 		return (add_dnodeint(h, n));
 
-	while (current_node != NULL)
+	while (current_node != NULL && (dlistint_len(*h) < idx))
 	{
 		if (counter == (idx - 1))
 		{
@@ -33,7 +60,9 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		counter++;
 	}
 	if (counter == 0)
+	{
+		free(new_node);
 		return (NULL);
+	}
 	return (*h);
 }
-
