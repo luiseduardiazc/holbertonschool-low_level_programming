@@ -1,26 +1,5 @@
 #include "lists.h"
 /**
-* dlistint_len - print_dlistint
-* @h: pointer
-* Return: count of elements
-*/
-size_t dlistint_len(const dlistint_t *h)
-{
-	size_t count = 0;
-	dlistint_t const *current = h;
-
-	if (!current)
-	{
-		return (count);
-	}
-	while (current != NULL)
-	{
-		current = current->next;
-		count++;
-	}
-	return (count);
-}
-/**
  * insert_dnodeint_at_index - insert_dnodeint_at_index
  * @h: list type dlistint_t
  * @idx: index
@@ -43,15 +22,7 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	new_node = malloc(sizeof(dlistint_t));
 	if (new_node == NULL)
 		return (NULL);
-
 	new_node->n = n;
-	new_node->next = NULL;
-	new_node->prev = NULL;
-	if (dlistint_len(*h) == idx)
-	{
-		add_dnodeint_end(h, n);
-		return (new_node);
-	}
 	while (current_node != NULL)
 	{
 		if (counter == idx)
@@ -60,6 +31,14 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 			new_node->prev = current_node->prev;
 			prev_node = current_node->prev;
 			prev_node->next = new_node;
+			return (new_node);
+		}
+		if (counter == idx - 1)
+		{
+			new_node->next = current_node;
+			new_node->prev = current_node->prev;
+			prev_node = current_node->prev;
+			prev_node = current_node->prev;
 			return (new_node);
 		}
 		current_node = current_node->next;
