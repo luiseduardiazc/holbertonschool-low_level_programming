@@ -16,16 +16,16 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	if (h == NULL || (*h == NULL && idx != 0))
 		return (NULL);
 
-	if (idx == 0 && current_node != NULL)
+	if (idx == 0)
 		return (add_dnodeint(h, n));
 
-	add_dnodeint(&new_node, n);
+	new_node = malloc(sizeof(dlistint_t));
 	if (new_node == NULL)
 		return (NULL);
 
+	new_node->n = n;
 	new_node->next = NULL;
 	new_node->prev = NULL;
-
 	while (current_node != NULL)
 	{
 		if (counter == idx)
