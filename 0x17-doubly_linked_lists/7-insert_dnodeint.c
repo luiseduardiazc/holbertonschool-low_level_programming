@@ -61,10 +61,6 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		current_node = current_node->next;
 		counter++;
 	}
-	if (counter == 0)
-	{
-		free(new_node);
-		return (NULL);
-	}
+	free(new_node);
 	return (new_node);
 }
