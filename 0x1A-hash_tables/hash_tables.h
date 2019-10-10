@@ -1,0 +1,8 @@
+//
+// Created by luis on 10/10/19.
+//
+
+#ifndef INC_0X1A_HASH_TABLES_HASH_TABLES_H
+#define INC_0X1A_HASH_TABLES_HASH_TABLES_H
+
+#endif //INC_0X1A_HASH_TABLES_HASH_TABLES_H
