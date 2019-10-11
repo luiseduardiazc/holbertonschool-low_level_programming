@@ -12,7 +12,9 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *new_node = NULL;
 	hash_node_t *existing_node = NULL;
 
-	if (strcmp(key, "") == 0)
+	if (ht == NULL || key == NULL || value == NULL)
+		return (0);
+	if (strlen(key) == 0)
 		return (0);
 	if (ht->size == 0)
 		return (0);
