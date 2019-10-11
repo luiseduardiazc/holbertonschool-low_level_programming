@@ -3,7 +3,7 @@
  * hash_table_get - This function get element by key
  * @ht: hash table
  * @key: key
- * Return: value or NULL 
+ * Return: value or NULL
  */
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
@@ -24,7 +24,7 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 		{
 			return (head->value);
 		}
-		head = head->next;	
+		head = head->next;
 	}
 	return (NULL);
 }
