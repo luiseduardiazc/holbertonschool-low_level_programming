@@ -10,7 +10,7 @@ void hash_table_print(const hash_table_t *ht)
 	hash_node_t *head = NULL;
 
 	if (ht == NULL)
-		printf("%s\n", "{}");
+		return;
 
 	while (index < ht->size)
 	{
@@ -26,7 +26,7 @@ void hash_table_print(const hash_table_t *ht)
 			num_slots_busy--;
 		while (head != NULL)
 		{
-			printf("'%s':'%s'", head->key, head->value);
+			printf("'%s': '%s'", head->key, head->value);
 			if (num_slots_busy == 0 && head->next != NULL)
 				printf(", ");
 			if (num_slots_busy != 0)
