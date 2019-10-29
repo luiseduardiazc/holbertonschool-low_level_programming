@@ -8,17 +8,17 @@
  */
 void shell_sort(int *array, size_t size)
 {
-	size_t h, gap, i, j;
-	int temp;
+	unsigned int h, gap, i, j, temp;
 
 	if (size < 2)
 		return;
 	h = 1;
 	/* manage sequence of intervals */
-	while (h < (size / 3))
-		h = (h * 3) + 1;
+	while (h < size)
+		h = 3 * h + 1;
 
-	for (gap = h; gap > 0; gap /= h)
+	h = (h - 1) / 3;
+	for (gap = h; gap > 0; gap = (gap - 1) / 3)
 	{
 		for (i = gap; i < size; i++)
 		{
