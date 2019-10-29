@@ -1,4 +1,5 @@
 #include "sort.h"
+
 /**
  * shell_sort - shell_sort
  * @array: array
@@ -11,6 +12,8 @@ void shell_sort(int *array, size_t size)
 	size_t swap = 0;
 	int temp;
 
+	if (size < 2)
+		return;
 	h = 1;
 	/* manage sequence of intervals */
 	while (h < (size / 3))
