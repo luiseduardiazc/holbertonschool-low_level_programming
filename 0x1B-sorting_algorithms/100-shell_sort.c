@@ -9,7 +9,6 @@
 void shell_sort(int *array, size_t size)
 {
 	size_t h, gap, i, j;
-	size_t swap = 0;
 	int temp;
 
 	if (size < 2)
@@ -21,19 +20,15 @@ void shell_sort(int *array, size_t size)
 
 	for (gap = h; gap > 0; gap /= h)
 	{
-		swap = 0;
 		for (i = gap; i < size; i++)
 		{
 			temp = array[i];
 			for (j = i; j >= gap && array[j - gap] > temp; j -= gap)
 			{
 				array[j] = array[j - gap];
-				/* flag for manage changes and print array */
-				swap = 1;
 			}
 			array[j] = temp;
 		}
-		if (swap)
-			print_array(array, size);
+		print_array(array, size);
 	}
 }
