@@ -36,11 +36,9 @@ void cocktail_sort_list(listint_t **list)
 	int swap;
 	listint_t *last = NULL, *head = *list;
 
-	swap = 1;
 	if (list == NULL && head == NULL && (*list)->next == NULL)
 		return;
-	while (swap)
-	{
+	do {
 		swap = 0;
 		while (head)
 		{
@@ -70,5 +68,5 @@ void cocktail_sort_list(listint_t **list)
 				head = last;
 			last = last->prev;
 		}
-	}
+	} while (swap);
 }
