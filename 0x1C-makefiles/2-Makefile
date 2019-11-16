@@ -1,8 +1,7 @@
 CC = gcc
-CFLAGS= -std=c90
 SRC = main.c holberton.c
 OBJ= $(SRC:.c=.o)
-EXECUTABLE=holberton
-all: $(SRC) $(EXECUTABLE)
-$(EXECUTABLE): $(OBJ) 
-	$(CC) $(CFLAGS) $(OBJ) -o $@
+NAME=holberton
+all: $(SRC) $(NAME)
+$(NAME): $(OBJ) 
+	$(CC) $(OBJ) -o $@
