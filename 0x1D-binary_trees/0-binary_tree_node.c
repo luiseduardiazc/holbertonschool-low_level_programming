@@ -4,7 +4,7 @@
  * binary_tree_insert_left - binary_tree_insert_left
  * @parent: root
  * @value: value to be insert
- * @return: tree
+ * @return: new binary_tree_node
  */
 binary_tree_t *binary_tree_node(binary_tree_t *parent, int value)
 {
@@ -21,5 +21,7 @@ binary_tree_t *binary_tree_node(binary_tree_t *parent, int value)
     {
         return (new_node);
     }
-    return (NULL);
+    new_node->parent = parent;
+
+    return (new_node);
 }
