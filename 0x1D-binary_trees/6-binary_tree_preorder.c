@@ -4,6 +4,7 @@
  * @tree: tree
  * @func: func
  * Return: Nothing
+ * [ root, left, right ]
  */
 void binary_tree_preorder(const binary_tree_t *tree, void (*func)(int))
 {
