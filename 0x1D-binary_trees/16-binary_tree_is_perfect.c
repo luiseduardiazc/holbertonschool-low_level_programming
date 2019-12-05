@@ -1,18 +1,18 @@
 #include "binary_trees.h"
 
 /**
- * depth_left - depth_left
+ * depth_any_node - depth_any_node
  * @node: node
  * Return: depth
  */
-int depth_left(const binary_tree_t *node)
+int depth_any_node(const binary_tree_t *node)
 {
 	int d = 0;
 
 	while (node != NULL)
 	{
 		d++;
-		node = node->left;
+		node = node->right;
 	}
 	return (d);
 }
@@ -46,6 +46,6 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 {
 	int depth = 0;
 
-	depth = depth_left(tree);
+	depth = depth_any_node(tree);
 	return (is_perfect(tree, depth, 0));
 }
