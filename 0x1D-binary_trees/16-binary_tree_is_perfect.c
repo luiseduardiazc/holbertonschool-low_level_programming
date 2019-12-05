@@ -1,11 +1,11 @@
 #include "binary_trees.h"
 
 /**
- * findADepth - findADepth
+ * depth_left - depth_left
  * @node: node
  * Return: depth
  */
-int findADepth(const binary_tree_t *node)
+int depth_left(const binary_tree_t *node)
 {
 	int d = 0;
 
@@ -46,6 +46,6 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 {
 	int depth = 0;
 
-	depth = findADepth(tree);
+	depth = depth_left(tree);
 	return (is_perfect(tree, depth, 0));
 }
