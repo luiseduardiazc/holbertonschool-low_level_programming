@@ -15,6 +15,7 @@ void print_array(int *array, int low, int high)
 	int i;
 
 	i = low;
+	printf("Searching in array: ");
 	while (array && i <= high)
 	{
 
@@ -39,9 +40,7 @@ int search(int *array, int low, int high, int value)
 {
 	int mid;
 
-	if (!array || high < 0)
-		return (-1);
-	if (low > high)
+	if ((low > high) || (array == NULL))
 		return (-1);
 	print_array(array, low, high);
 	mid = (low + high) / 2;
