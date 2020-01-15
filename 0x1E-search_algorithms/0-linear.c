@@ -1,5 +1,6 @@
 #include "search.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
  * linear_search - linear_search
@@ -10,13 +11,13 @@
  */
 int linear_search(int *array, size_t size, int value)
 {
-	int i;
+	size_t i;
 
 	if (array == NULL)
-		return (NULL);
+		return (-1);
 	for (i = 0; i < size; i++)
 	{
-		printf("Value checked array[%d] = [%d]\n", i, array[i]);
+		printf("Value checked array[%d] = [%d]\n", (int)i, array[i]);
 		if (array[i] == value)
 			return (i);
 	}
