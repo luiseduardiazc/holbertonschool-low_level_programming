@@ -39,7 +39,7 @@ int search(int *array, int low, int high, int value)
 {
 	int mid;
 
-	if (!array)
+	if (!array || high < 0)
 		return (-1);
 	if (low > high)
 		return (-1);
