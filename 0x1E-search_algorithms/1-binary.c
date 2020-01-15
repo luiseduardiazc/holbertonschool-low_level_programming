@@ -1,5 +1,6 @@
 #include "search.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
  * print_array - Prints an array of integers
@@ -31,9 +32,10 @@ void print_array(int *array, int low, int high)
  * @low: low index
  * @high: high index
  * @value: value to find
+ * Return: int
  *
  */
-search(int *array, int low, int high, int value)
+int search(int *array, int low, int high, int value)
 {
 	int mid;
 
