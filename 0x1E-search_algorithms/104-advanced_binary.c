@@ -33,6 +33,7 @@ void print_array(int *array, int low, int high)
  * @low: low index
  * @high: high index
  * @value: value to find
+ * @size: original size of array
  * Return: int
  *
  */
@@ -44,6 +45,7 @@ int search(int *array, int low, int high, int value)
 		return (-1);
 	print_array(array, low, high);
 	mid = (low + high) / 2;
+
 	if (array[mid] == value && array[mid - 1] == value)
 		return (search(array, low, mid , value));
 	if (value > array[mid])
