@@ -38,21 +38,19 @@ void print_array(int *array, int low, int high)
  */
 int search(int *array, int low, int high, int value)
 {
-	int mid;
+	int mid = 0;
 
-	if ((low > high) || (array == NULL))
-		return (-1);
 	print_array(array, low, high);
-	mid = (low + high) / 2;
-
-	if (array[mid] == value && array[mid - 1] == value && array[mid - 1] != 0)
-		return (search(array, low, mid , value));
-	if (value > array[mid])
+	mid = (high + low) / 2;
+	if (array[mid] == value && array[mid - 1] != value)
+		return (mid);
+	else if (high == low)
+		return (-1);
+	else if (array[mid] >= value)
+		return (search(array, low, mid, value));
+	else if (array[mid] < value)
 		return (search(array, mid + 1, high, value));
-	if (value < array[mid])
-		return (search(array, low, mid - 1, value));
-
-	return (mid);
+	return (-1);
 }
 
 /**
@@ -64,5 +62,7 @@ int search(int *array, int low, int high, int value)
  */
 int advanced_binary(int *array, size_t size, int value)
 {
-	return (search(array, 0, size - 1  , value));
+	if (array == NULL || size < 0)
+		return (-1);
+	return (search(array, 0, size - 1, value));
 }
