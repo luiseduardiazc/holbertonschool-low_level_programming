@@ -33,7 +33,6 @@ void print_array(int *array, int low, int high)
  * @low: low index
  * @high: high index
  * @value: value to find
- * @size: original size of array
  * Return: int
  *
  */
